@@ -12,7 +12,7 @@ $(".likeButton").on("click", function(event){
         type: "PUT",
         data: originalScore++
     }).then(function(){
-        console.log(`changed movieScore from ${originalScore} to ${oringalScore++}`;
+        console.log(`changed movieScore from ${originalScore} to ${oringalScore++}`);
     });
 
 });
