@@ -1,5 +1,4 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+-- Creates the "flickscore_db" database --
+CREATE DATABASE flickscore_db;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+

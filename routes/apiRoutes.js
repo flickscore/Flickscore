@@ -1,6 +1,20 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = app => {
+  // // Get all examples
+  // app.get("/api/examples", (req, res) => {
+  //   db.Flickscore.findAll({}).then(dbFlickscore => {
+  //     res.json(dbFlickscore);
+  //   });
+  // });
+
+  // Create a new movie title & movie score.
+  app.post("/api/flickscores/", (req, res) => {
+    db.Flickscore.create(req.body).then(dbFlickscore => {
+      res.json(dbFlickscore);
+    });
+  });
+
   // Get all examples
   app.get("/api/movies", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
