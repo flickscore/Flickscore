@@ -43,13 +43,12 @@ module.exports = app => {
       // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Flickscore.update({
-      text: req.body.text,
-      complete: req.body.complete
+      score: req.body.score,
     }, {
       where: {
-        id: req.body.id
+        title: req.body.title
       }
-    }).then(function(dbFlickscore) {
+    }).then((dbFlickscore) => {
       res.json(dbFlickscore);
     });
   })
