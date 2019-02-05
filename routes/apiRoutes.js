@@ -34,8 +34,8 @@ module.exports = app => {
 
   // Create a new example
   app.post("/api/movies", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+    db.Flickscore.create(req.body).then(function(dbFlickscore) {
+      res.json(dbFlickscore);
     });
   });
 };

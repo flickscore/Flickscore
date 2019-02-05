@@ -1,3 +1,2 @@
 -- Creates the "flickscore_db" database --
-CREATE DATABASE flickscore_db;
-
+CREATE DATABASE ghfd14ptek0caezf;

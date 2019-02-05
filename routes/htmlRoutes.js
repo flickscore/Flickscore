@@ -6,15 +6,15 @@ module.exports = app => {
 
   // index route loads view.html
   app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
   });
 
-  app.get("/movie/:movieTitle", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/movie.html"));
-  });
+  // app.get("/movie/:movieTitle", (req, res) => {
+  //   res.sendFile(path.join(__dirname, "movie.html"));
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", (req, res) => {
-    res.render("404");
+    res.send("404");
   });
 };
