@@ -9,11 +9,11 @@ module.exports = app => {
   // });
 
   // Create a new movie title & movie score.
-  app.post("/api/flickscores/", (req, res) => {
-    db.Flickscore.create(req.body).then(dbFlickscore => {
-      res.json(dbFlickscore);
-    });
-  });
+  // app.post("/api/flickscores/", (req, res) => {
+  //   db.Flickscore.create(req.body).then(dbFlickscore => {
+  //     res.json(dbFlickscore);
+  //   });
+  // });
 
   // Get all examples
   app.get("/api/movies", function(req, res) {
@@ -38,4 +38,19 @@ module.exports = app => {
       res.json(dbExample);
     });
   });
+  // update movie with new score
+  app.put("/api/movies", function(req, res){
+      // Update takes in an object describing the properties we want to update, and
+    // we use where to describe which objects we want to update
+    db.Flickscore.update({
+      text: req.body.text,
+      complete: req.body.complete
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }).then(function(dbFlickscore) {
+      res.json(dbFlickscore);
+    });
+  })
 };
