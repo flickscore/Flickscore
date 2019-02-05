@@ -1,0 +1,16 @@
+body {
+    text-align: center;
+    background: #333;
+    color: lightblue;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+}
+#bubbleSort {
+border-top: black 2px solid;
+
+}
+#movieData {
+    float: left;
+    position: relative;
+    top: 0.5in; 
+    color: white;
+}
