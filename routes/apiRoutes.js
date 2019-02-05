@@ -1,23 +1,40 @@
 var db = require("../models");
 
-module.exports = function(app) {
+module.exports = app => {
+  // // Get all examples
+  // app.get("/api/examples", (req, res) => {
+  //   db.Flickscore.findAll({}).then(dbFlickscore => {
+  //     res.json(dbFlickscore);
+  //   });
+  // });
+
+  // Create a new movie title & movie score.
+  app.post("/api/flickscores/", (req, res) => {
+    db.Flickscore.create(req.body).then(dbFlickscore => {
+      res.json(dbFlickscore);
+    });
+  });
+
   // Get all examples
-  app.get("/api/examples", function(req, res) {
+  app.get("/api/movies", function(req, res) {
     db.Example.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
-
-  // Create a new example
-  app.post("/api/examples", function(req, res) {
-    db.Example.create(req.body).then(function(dbExample) {
-      res.json(dbExample);
+  //get movie by title
+  app.get("/api/movies/:title", function(req, res) {
+    db.Flickscore.findAll({
+      where: {
+        title: req.params.title
+      }
+    }).then(results => {
+      res.json(results);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
+  // Create a new example
+  app.post("/api/movies", function(req, res) {
+    db.Example.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });
   });
