@@ -1,14 +1,14 @@
+// eslint-disable-next-line no-unused-vars
 $(".likeButton").on("click", function(event) {
-  console.log(event);
-  let title = $(this).data("title");
+  let id = $(this).data("id");
 
-  let originalScore = $.get(`/api/Flickscore/${title}`, (res, status) => {
+  let originalScore = $.get(`/api/Flickscore/${id}`, (res, status) => {
     console.log(`RESULT: ${res}`);
     console.log(`STATUS: ${status}`);
     return res.score;
   });
 
-  $.ajax(`/api/Flickscore/${title}`, {
+  $.ajax(`/api/Flickscore/${id}`, {
     type: "PUT",
     data: originalScore++
   }).then(function() {
