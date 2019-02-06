@@ -8,22 +8,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="flickscore.css" />
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    
-    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
-    <H1>Welcome to Flickscore!</H1>
-    <br>
-    <h4>Movie Search</h4>
-    <br>
-    <div id="search">
-        <form id="movieName">
-            <input type="text" class="tftextinput" name="q" size="21" maxlength="200"><input type="submit" value="Find Movie!"id="movie">
-        </form>
-       
-    </div>
+        <div id="search">
+            <H1>Welcome to Flickscore!</H1>
+            <br>
+            <h4>Movie Search</h4>
+            <br>
+            <input id="movieName" type="text" class="tftextinput" name="q" size="21" maxlength="200">
+            <input type="button" value="Find Movie!" id="movie">
+        </div>
     <br>
     <section id="bubbleSort">
         <div class = "movieContainer">
@@ -32,7 +32,10 @@
 
 
     </section>
-    <script src="/js/script.js"></script>
+    <script src="js/omdb.js"></script>
+    <script src="js/script.js"></script>
+
+
 </body>
 
 </html>
