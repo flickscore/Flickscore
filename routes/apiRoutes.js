@@ -17,7 +17,7 @@ module.exports = app => {
 
   // Get all examples
   app.get("/api/movies", function(req, res) {
-    db.Example.findAll({}).then(function(dbExamples) {
+    db.Flickscore.findAll({}).then(function(dbExamples) {
       res.json(dbExamples);
     });
   });
@@ -39,17 +39,20 @@ module.exports = app => {
     });
   });
   // update movie with new score
-  app.put("/api/movies", function(req, res){
-      // Update takes in an object describing the properties we want to update, and
+  app.put("/api/movies", function(req, res) {
+    // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
-    db.Flickscore.update({
-      score: req.body.score,
-    }, {
-      where: {
-        title: req.body.title
+    db.Flickscore.update(
+      {
+        score: req.body.score
+      },
+      {
+        where: {
+          title: req.body.title
+        }
       }
-    }).then((dbFlickscore) => {
+    ).then(dbFlickscore => {
       res.json(dbFlickscore);
     });
-  })
+  });
 };
