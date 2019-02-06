@@ -12,7 +12,11 @@ $(document).ready(function() {
   }).then(function(response) {
     $("#movieTitle").html(response.Title);
     $("#plotSummary").html(response.Plot);
-    //   $("#moviePoster").src(response.Poster);
+    var img = document.createElement("img");
+    img.src = response.Poster;
+    var src = document.getElementById("moviePoster");
+    src.appendChild(img);
+
     $("#cast").html(response.Actors);
     $("#rottenTomato").html(response.Ratings[1].Value);
     console.log(JSON.stringify(response));
