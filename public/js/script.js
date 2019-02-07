@@ -28,6 +28,7 @@ $(document).ready(function() {
     $movieContainer.empty();
     let dataToAdd = [];
     for (i = 0; i < movies.length; i++) {
+      console.log(movies[i]);
       dataToAdd.push(createNewMovie(movies[i]));
     }
     $movieContainer.prepend(dataToAdd);
@@ -36,6 +37,7 @@ $(document).ready(function() {
   function getMovies() {
     $.get("api/movies", data => {
       movies = data;
+      console.log(movies);
       initializeData();
     });
   }
@@ -46,9 +48,9 @@ $(document).ready(function() {
         // eslint-disable-next-line quotes
         `<div class = "movie">`,
         "<span>",
-        movie.title,
+        movie.movieTitle,
         "</span>",
-        `<button class = "likeButton"> VOTE FOR ${movie.title} </button>`,
+        `<button class = "likeButton"> VOTE FOR ${movie.movieTitle} </button>`,
         "</div>"
       ].join("")
     );
