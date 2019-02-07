@@ -10,6 +10,18 @@ $(document).ready(function() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
+    let movieInfo = {
+      movieTitle: response.Title,
+      moviePoster: response.Poster
+    };
+    //POST to DATABASE
+    $.ajax({
+      url: "/api/movies",
+      data: movieInfo,
+      method: "POST"
+    }).then(function(resp) {
+      console.log("movie added");
+    });
     $("#movieTitle").html(response.Title);
     $("#plotSummary").html(response.Plot);
     var img = document.createElement("img");
