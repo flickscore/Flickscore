@@ -1,22 +1,23 @@
 $(document).ready(function() {
   let $movieContainer = $(".movieContainer");
   // eslint-disable-next-line no-unused-vars
-  $(".likeButton").on("click", function(event) {
-    let id = $(this).data("id");
-
-    let originalScore = $.get(`/api/movies/${id}`, (res, status) => {
-      console.log(`RESULT: ${res}`);
+  $("#likeButton").on("click", function(event) {
+    let title = $(this).attr("title");
+    console.log(title);
+    let originalScore = 0;
+    $.get("/api/movies/" + title, function(res, status) {
+      console.log(`RESULT: ${res[0].movieScore}`);
       console.log(`STATUS: ${status}`);
-      return res.score;
-    });
-
-    $.ajax(`/api/movies/${id}`, {
-      type: "PUT",
-      data: originalScore++
-    }).then(function() {
-      console.log(
-        `changed movieScore from ${originalScore} to ${oringalScore++}`
-      );
+      originalScore = res[0].movieScore;
+      $.ajax(`/api/movies/${title}`, {
+        type: "PUT",
+        data: originalScore++
+      }).then(function() {
+        console.log(
+          `changed movieScore from ${originalScore} to ${originalScore++}`
+        );
+      });
+      //console.log("originalScore after call", originalScore);
     });
   });
   //array to put movies from the database

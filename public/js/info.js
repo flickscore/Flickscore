@@ -23,6 +23,7 @@ $(document).ready(function() {
       console.log("movie added");
     });
     $("#movieTitle").html(response.Title);
+    $("#likeButton").attr("title", response.Title);
     $("#plotSummary").html(response.Plot);
     var img = document.createElement("img");
     img.src = response.Poster;
