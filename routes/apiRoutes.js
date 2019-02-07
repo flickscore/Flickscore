@@ -23,12 +23,14 @@ module.exports = app => {
   });
   //get movie by title
   app.get("/api/movies/:title", function(req, res) {
+    console.log("LOG 1", req.params.title);
     db.Flickscore.findAll({
       where: {
-        title: req.params.title
+        movieTitle: req.params.title
       }
     }).then(results => {
       res.json(results);
+      console.log("hey!", results[0].dataValues.movieScore);
     });
   });
 
@@ -39,16 +41,17 @@ module.exports = app => {
     });
   });
   // update movie with new score
-  app.put("/api/movies", function(req, res) {
+  app.put("/api/movies/:title", function(req, res) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
+    console.log("LOG 2", req.body.score);
     db.Flickscore.update(
       {
-        score: req.body.score
+        score: req.body.movieScore
       },
       {
         where: {
-          title: req.body.title
+          movieTitle: req.params.title
         }
       }
     ).then(dbFlickscore => {
