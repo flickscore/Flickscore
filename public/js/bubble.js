@@ -4,7 +4,7 @@
   });
 
   function generateBubbleChart(data) {
-    var width = 500,
+    var width = 1000,
       height = 500;
 
     var svg = d3
@@ -25,11 +25,11 @@
 
     var radiusScale = d3
       .scaleSqrt()
-      .domain([1, 100])
-      .range([10, 80]);
+      .domain([1, 5000])
+      .range([25, 200]);
 
     // d3.queue()
-    //   // .defer(d3.json, data)
+    //   .defer(d3.json, data)
     //   .datum(data)
     //   .await(ready);
 
@@ -44,7 +44,7 @@
         })
       );
 
-    ready(null, data);
+    ready(data);
 
     function ready(datapoints) {
       var circles = svg
@@ -64,7 +64,7 @@
         });
 
       defs
-        .selectAll(".movie-patters")
+        .selectAll(".movie-patterns")
         .data(datapoints)
         .enter()
         .append("pattern")

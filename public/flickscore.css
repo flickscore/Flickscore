@@ -5,9 +5,9 @@ body {
     font-family: 'Yanone Kaffeesatz', sans-serif;
 }
 
-svg {
+/* svg {
     background: #f1f1f1;
-  }
+  } */
 #bubbleSort {
 border-top: black 2px solid;
 
