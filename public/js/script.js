@@ -1,3 +1,5 @@
+let movieSort = require("./movieSort");
+console.log(movieSort);
 $(document).ready(function () {
   let $movieContainer = $(".movieContainer");
   // eslint-disable-next-line no-unused-vars
@@ -35,19 +37,9 @@ $(document).ready(function () {
       initializeData();
     });
   }
+  $("topTenBtn").on("click", function () {
+    getMovies();
 
-  function createNewMovie(movie) {
-    let $newMovie = $(
-      [
-        // eslint-disable-next-line quotes
-        `<div class = "movie">`,
-        "<span>",
-        movie.title,
-        "</span>",
-        `<button class = "likeButton"> VOTE FOR ${movie.title} </button>`,
-        "</div>"
-      ].join("")
-    );
-    return $newMovie;
-  }
+
+  });
 });

@@ -1,6 +1,6 @@
 //takes in array of movies objects and returns them ordered by movieScore
 movieSort = {
-  merge: function(left, right) {
+  merge: function (left, right) {
     let result = [];
     leftLen = left.length;
     rightLen = right.length;
@@ -16,7 +16,7 @@ movieSort = {
     //remaining part needs to be addred to the result
     return result.concat(left.slice(l)).concat(right.slice(r));
   },
-  divide: function(arr) {
+  divide: function (arr) {
     let len = arr.length;
     if (len < 2) {
       return arr;
@@ -29,4 +29,4 @@ movieSort = {
     return merge(divide(left), divide(right));
   }
 };
-module.exports(movieSort);
+export (movieSort);
