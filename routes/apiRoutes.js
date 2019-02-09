@@ -37,7 +37,7 @@ module.exports = app => {
   // Create a new example
   app.post("/api/movies", function (req, res) {
     const newMovie = req.body;
-    console.log(req.body);
+    console.log("req body", req.body);
     db.Flickscore.create({
       movieTitle: newMovie.movieTitle,
       movieScore: newMovie.movieScore,
