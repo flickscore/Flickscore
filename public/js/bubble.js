@@ -4,8 +4,8 @@
   });
 
   function generateBubbleChart(data) {
-    var width = 500,
-      height = 500;
+    var width = 960,
+      height = 605;
 
     var svg = d3
       .select("#chart")
@@ -25,8 +25,8 @@
 
     var radiusScale = d3
       .scaleSqrt()
-      .domain([1, 100])
-      .range([10, 80]);
+      .domain([1, 3500])
+      .range([25, 200]);
 
     // d3.queue()
     //   // .defer(d3.json, data)
@@ -44,7 +44,7 @@
         })
       );
 
-    ready(null, data);
+    ready(data);
 
     function ready(datapoints) {
       var circles = svg
@@ -52,19 +52,27 @@
         .data(datapoints)
         .enter()
         .append("circle")
-        .attr("class", "movies")
+        // .classList.add("movies", "movieText")
+        // .attr("class", "movies")
+        .attr("class", "movieText")
         .attr("r", function(d) {
           return radiusScale(d.movieScore);
         })
         .attr("fill", function(d) {
           return "url(#" + d.id + ")";
         })
+        .on("mouseover", function(d) {
+          // window.location.href = `/movie.html?movieTitle=${d.movieTitle}`;
+          // console.log(d);
+        })
+
         .on("click", function(d) {
+          window.location.href = `/movie.html?movieTitle=${d.movieTitle}`;
           console.log(d);
         });
 
       defs
-        .selectAll(".movie-patters")
+        .selectAll(".movie-patterns")
         .data(datapoints)
         .enter()
         .append("pattern")
