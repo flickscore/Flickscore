@@ -8,14 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="flickscore.css" />
     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
+    <button onclick="location.href = '/';" id="homeButton" class="float-left submit-button">Home</button>
     <h1>Movie info</h1>
     <section id="movieData">
         <div id="moviePoster">
+
             <div id=floater1>
                 <div id="movieTitle"></div>
                 <br>
@@ -23,6 +27,7 @@
                 <br>
                 <div id="cast"></div>
                 <br>
+
                 <div id="rottenTomato"></div>
                 <button id="likeButton">Up Vote The Movie!</button>
             </div>

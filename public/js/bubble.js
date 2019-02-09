@@ -1,5 +1,5 @@
-(function() {
-  $.get("/api/movies").then(function(data) {
+(function () {
+  $.get("/api/movies").then(function (data) {
     generateBubbleChart(data);
   });
 
@@ -39,7 +39,7 @@
       .force("y", d3.forceY(height / 2).strength(0.05))
       .force(
         "collide",
-        d3.forceCollide(function(d) {
+        d3.forceCollide(function (d) {
           return radiusScale(d.movieScore) + 1;
         })
       );
@@ -55,18 +55,18 @@
         // .classList.add("movies", "movieText")
         // .attr("class", "movies")
         .attr("class", "movieText")
-        .attr("r", function(d) {
+        .attr("r", function (d) {
           return radiusScale(d.movieScore);
         })
-        .attr("fill", function(d) {
+        .attr("fill", function (d) {
           return "url(#" + d.id + ")";
         })
-        .on("mouseover", function(d) {
+        .on("mouseover", function (d) {
           // window.location.href = `/movie.html?movieTitle=${d.movieTitle}`;
           // console.log(d);
         })
 
-        .on("click", function(d) {
+        .on("click", function (d) {
           window.location.href = `/movie.html?movieTitle=${d.movieTitle}`;
           console.log(d);
         });
@@ -77,7 +77,7 @@
         .enter()
         .append("pattern")
         .attr("class", "artist-pattern")
-        .attr("id", function(d) {
+        .attr("id", function (d) {
           return d.id;
         })
         .attr("height", "100%")
@@ -88,7 +88,7 @@
         .attr("width", 1)
         .attr("preserveAspectRatio", "none")
         .attr("xmlns:xlink", "http://www.w3.org/1999/xlink")
-        .attr("xlink:href", function(d) {
+        .attr("xlink:href", function (d) {
           return d.moviePoster;
         });
 
@@ -96,10 +96,10 @@
 
       function ticked() {
         circles
-          .attr("cx", function(d) {
+          .attr("cx", function (d) {
             return d.x;
           })
-          .attr("cy", function(d) {
+          .attr("cy", function (d) {
             return d.y;
           });
       }

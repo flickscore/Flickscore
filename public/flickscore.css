@@ -82,3 +82,41 @@ footer {
 img {
     float: left;
 }
+#homeButton{
+    background: #333;
+    color: lightblue;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.2em;
+    padding:0 2em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+    float: left;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+  }
+  #homeButton:hover{
+    background: lightblue;
+    color: #333;
+  }
+  #homeButton:before,#homeButton:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #333;
+    transition:400ms ease all;
+  }
+  #homeButton:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  #homeButton:hover:before,#homeButton:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
