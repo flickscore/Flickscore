@@ -15,16 +15,16 @@ $(document).ready(function () {
       moviePoster: response.Poster,
       movieScore: 0
     };
-    $("#movieTitle").html(response.Title);
+    $("#movieTitle").html("Title: " + response.Title);
     $("#likeButton").attr("title", response.Title);
-    $("#plotSummary").html(response.Plot);
+    $("#plotSummary").html("Plot: " + response.Plot);
     var img = document.createElement("img");
     img.src = response.Poster;
     var src = document.getElementById("moviePoster");
     src.appendChild(img);
 
-    $("#cast").html(response.Actors);
-    $("#rottenTomato").html(response.Ratings[1].Value);
+    $("#cast").html("Cast: " + response.Actors);
+    $("#rottenTomato").html("Rating: " + response.Ratings[1].Value);
     console.log(JSON.stringify(response));
     //Check to see if movie exists in database
     $.ajax({
