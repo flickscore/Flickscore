@@ -18,6 +18,9 @@ $(document).ready(function () {
     $("#movieTitle").html("Title: " + response.Title);
     $("#likeButton").attr("title", response.Title);
     $("#plotSummary").html("Plot: " + response.Plot);
+    $("#movieGenre").html("Genre: " + response.Genre);
+    $("#movieRating").html("Rated: " + response.Rated);
+    $("#movieAwards").html("Awards: " + response.Awards);
     var img = document.createElement("img");
     img.src = response.Poster;
     var src = document.getElementById("moviePoster");
