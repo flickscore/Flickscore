@@ -15,30 +15,38 @@
 
 
 </head>
+<div id="overlay">
 
-<body>
-    <div id="search">
-        <H1>Welcome to Flickscore!</H1>
-        <!-- <br> -->
-        <!-- <h4>Movie Search</h4> -->
-        <!-- <br> -->
-        <input id="movieName" type="text" class="tftextinput" name="q" size="21" maxlength="200">
-        <input type="button" value="Find Movie!" id="movie" />
-        <input type="button" value="Top Ten Leaderboard" id="topTenBtn" href="#topTen" rel="modal:open">
-    </div>
-    <br>
-    <div id="chart">
-    </div>
-    <div id="topTen" class="modal">
-        <ol id="tenList">
-        </ol>
-        <a href="#" rel="modal:close">Close</a>
-    </div>
-    <script src=//cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js> </script> <script src="js/omdb.js"></script>
-    <script src="js/bubble.js"></script>
-    <script src="js/script.js"></script>
+    <body>
+        <div id="search">
+            <H1>Welcome to Flickscore!</H1>
+            <!-- <br> -->
+            <!-- <h4>Movie Search</h4> -->
+            <!-- <br> -->
+            <input id="movieName" type="text" class="tftextinput" name="q" size="21" maxlength="200">
+            <input type="button" value="Find Movie!" id="movie" />
+            <input type="button" value="Top Ten Leaderboard" id="topTenBtn" href="#topTen" rel="modal:open">
+        </div>
+        <br>
+        <div id="chart">
+        </div>
+        <div id="topTen" class="modal">
+            <ol id="tenList">
+            </ol>
+            <a href="#" rel="modal:close">Close</a>
+        </div>
+        <script src=//cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js> </script> <script src="js/omdb.js"></script>
 
+        <footer>
+            <div id="copyright">
+                Copyright © Flickscore. All rights reserved.
+            </div>
+        </footer>
+        <script src=//cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js> </script> <script src="js/omdb.js"></script>
+        <script src="js/bubble.js"></script>
+        <script src="js/script.js"></script>
 
+</div>
 </body>
 
 </html>

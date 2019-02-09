@@ -3,6 +3,9 @@ body {
     background: #333;
     color: lightblue;
     font-family: 'Yanone Kaffeesatz', sans-serif;
+    border: dotted 10px lightblue;
+
+    
 }
 
 svg {
@@ -29,11 +32,50 @@ svg {
   }
 #bubbleSort {
 border-top: black 2px solid;
+height: 4in;
+width: 70%;
+top: .4in;
+position: relative;
+left: 2.2in;
+
 
 }
 #movieData {
-    float: left;
     position: relative;
     top: 0.5in; 
     color: white;
+    padding-left: 2in;
+    padding-right: 2in;
+    font-size: 20px;
+}
+#movie {
+    position: relative;
+    top: .3in;
+    right: .9in;
+    cursor: crosshair;
+    border-radius: 9px;
+}
+#movieName {
+    position: relative;
+    left: .56in;
+}
+#copyright
+{
+    position: relative;
+    top: .8in;
+    font-size: 13px;
+
+}
+footer {
+    background: black;
+    height: 1in;
+    width: 100%;
+    position: relative;
+    bottom: .1cm;
+}
+#floater1 {
+    float: right;
+}
+img {
+    float: left;
 }
