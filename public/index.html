@@ -12,8 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 <div id="overlay">
 
@@ -25,15 +24,15 @@
             <!-- <br> -->
             <input id="movieName" type="text" class="tftextinput" name="q" size="21" maxlength="200">
             <input type="button" value="Find Movie!" id="movie" />
-            <input type="button" value="Top Ten Leaderboard" id="topTenBtn" href="#topTen" rel="modal:open">
+            <a id="topTenBtn" href="#topTen" rel="modal:open"><button> List of Top Ten Movies By FlickScore!</button></a>
         </div>
         <br>
         <div id="chart">
         </div>
         <div id="topTen" class="modal">
+            <h2>Top Ten Movies!</h2>
             <ol id="tenList">
             </ol>
-            <a href="#" rel="modal:close">Close</a>
         </div>
         <script src=//cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js> </script> <script src="js/omdb.js"></script>
 
@@ -43,8 +42,10 @@
             </div>
         </footer>
         <script src=//cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js> </script> <script src="js/omdb.js"></script>
+        <script src="js/movieSort.js"></script>
         <script src="js/bubble.js"></script>
         <script src="js/script.js"></script>
+
 
 </div>
 </body>
