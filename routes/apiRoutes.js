@@ -30,7 +30,7 @@ module.exports = app => {
       }
     }).then(results => {
       res.json(results);
-      console.log("hey!", results[0].dataValues.movieScore);
+      //console.log("hey!", results[0].dataValues.movieScore);
     });
   });
 
@@ -50,7 +50,7 @@ module.exports = app => {
   app.put("/api/movies/:title", function (req, res) {
     db.Flickscore.increment("movieScore", {
       where: {
-        id: 3
+        movieTitle: req.params.title
       }
     }).then(() => {
       db.Flickscore.findOne({ where: { movieTitle: req.params.title } }).then(
