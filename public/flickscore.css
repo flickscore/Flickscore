@@ -46,7 +46,6 @@ left: 2.2in;
     color: white;
     padding-left: 2in;
     padding-right: 2in;
-    font-size: 20px;
 }
 #movie {
     position: relative;
@@ -75,6 +74,10 @@ footer {
 }
 #floater1 {
     float: right;
+    font-size: 20px;
+    position: relative;
+    top: 1in;
+ width: 70%
 }
 img {
     float: left;
