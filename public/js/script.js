@@ -1,24 +1,20 @@
-$(document).ready(function() {
+$(document).ready(function () {
   let $movieContainer = $(".movieContainer");
   // eslint-disable-next-line no-unused-vars
-  $(".likeButton").on("click", function(event) {
-    let id = $(this).data("id");
-
-    let originalScore = $.get(`/api/Flickscore/${id}`, (res, status) => {
-      console.log(`RESULT: ${res}`);
-      console.log(`STATUS: ${status}`);
-      return res.score;
-    });
-
-    $.ajax(`/api/movies/${id}`, {
-      type: "PUT",
-      data: originalScore++
-    }).then(function() {
+  $("#likeButton").on("click", function (event) {
+    let title = $(this).attr("title");
+    console.log(title);
+    $.ajax(`/api/movies/${title}`, {
+      type: "PUT"
+    }).then(function (updatedMovie) {
       console.log(
-        `changed movieScore from ${originalScore} to ${oringalScore++}`
+        `changed movieScore from ${updatedMovie.movieScore - 1} to 
+        ${updatedMovie.movieScore}`
       );
     });
+    //console.log("originalScore after call", originalScore);
   });
+  // });
   //array to put movies from the database
   let movies = [];
 
@@ -52,7 +48,6 @@ $(document).ready(function() {
         "</div>"
       ].join("")
     );
-
     return $newMovie;
   }
 });

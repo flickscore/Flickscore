@@ -7,6 +7,29 @@ body {
 
     
 }
+
+svg {
+    margin-top: 10px;
+    z-index: 2s;
+  }
+
+.moviesText {
+    visibility: visible;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+  
+    /* Position the movies */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .moviesText:hover {
+    visibility: visible;
+  }
 #bubbleSort {
 border-top: black 2px solid;
 height: 4in;

@@ -1,0 +1,24 @@
+{
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.formatOnSave": true,
+    "window.zoomLevel": 1,
+    "files.exclude": {
+      // include the defaults from VS Code
+      "**/.git": true,
+      "**/.DS_Store": true,
+      // exclude .js and .js.map files, when in a TypeScript project
+      "**/*.js": {
+        "when": "$(basename).ts"
+      },
+      "**/*.js.map": true
+    },
+    "editor.detectIndentation": false,
+    "[javascript]": {
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.tabSize": 2
+    }
+  }

@@ -16,43 +16,51 @@ module.exports = app => {
   // });
 
   // Get all examples
-  app.get("/api/movies", function(req, res) {
-    db.Flickscore.findAll({}).then(function(dbExamples) {
+  app.get("/api/movies", function (req, res) {
+    db.Flickscore.findAll({}).then(function (dbExamples) {
       res.json(dbExamples);
     });
   });
   //get movie by title
-  app.get("/api/movies/:title", function(req, res) {
+  app.get("/api/movies/:title", function (req, res) {
+    console.log("LOG 1", req.params.title);
     db.Flickscore.findAll({
       where: {
-        title: req.params.title
+        movieTitle: req.params.title
       }
     }).then(results => {
       res.json(results);
+      //console.log("hey!", results[0].dataValues.movieScore);
     });
   });
 
   // Create a new example
-  app.post("/api/movies", function(req, res) {
-    db.Flickscore.create(req.body).then(function(dbFlickscore) {
+  app.post("/api/movies", function (req, res) {
+    const newMovie = req.body;
+    console.log(req.body);
+    db.Flickscore.create({
+      movieTitle: newMovie.movieTitle,
+      movieScore: newMovie.movieScore,
+      moviePoster: newMovie.moviePoster
+    }).then(function (dbFlickscore) {
       res.json(dbFlickscore);
     });
   });
   // update movie with new score
-  app.put("/api/movies", function(req, res) {
-    // Update takes in an object describing the properties we want to update, and
-    // we use where to describe which objects we want to update
-    db.Flickscore.update(
-      {
-        score: req.body.score
-      },
-      {
-        where: {
-          title: req.body.title
-        }
+  app.put("/api/movies/:title", function (req, res) {
+    db.Flickscore.increment("movieScore", {
+      where: {
+        movieTitle: req.params.title
       }
-    ).then(dbFlickscore => {
-      res.json(dbFlickscore);
+    }).then(() => {
+      db.Flickscore.findOne({ where: { movieTitle: req.params.title } }).then(
+        movie => {
+          res.json(movie);
+        }
+      );
+      // console.log(dbFlickscore);
+      // let foo = dbFlickscore[0][1];
+      // res.json(foo);
     });
   });
 };
