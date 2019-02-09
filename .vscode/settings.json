@@ -3,7 +3,7 @@
       "source.organizeImports": true
     },
     "editor.formatOnSave": true,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "files.exclude": {
       // include the defaults from VS Code
       "**/.git": true,
