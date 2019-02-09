@@ -2,6 +2,7 @@ $(document).ready(function () {
   // eslint-disable-next-line no-unused-vars
   $("#likeButton").on("click", function (event) {
     let title = $(this).attr("title");
+    document.getElementById("thanks").innerHTML = "Thank you! ";
     console.log(title);
     $.ajax(`/api/movies/${title}`, {
       type: "PUT"
