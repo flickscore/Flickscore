@@ -42,13 +42,17 @@ svg {
 #movie {
     position: relative;
     top: .3in;
-    right: .9in;
+    left: .3in;
     cursor: crosshair;
     border-radius: 9px;
 }
 #movieName {
     position: relative;
-    left: .56in;
+    left: 1.6in;
+}
+#topTenBtn{
+    position: relative;
+    left: .9in;
 }
 #copyright
 {
